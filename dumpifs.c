@@ -1032,8 +1032,6 @@ void extract_file(FILE *fp, int ipos, struct image_file *ent) {
 	// Reset because it was probably altered by dirname()
 	strncpy(ent_path_copy, ent->path, len);
 
-	dst = fopen(name, "wb");
-	printf("%d", dst);
 	if(!(dst = fopen(name, "wb"))) {
 		error(0, "Unable to open %s: %s\n", name, strerror(errno));
 	}
